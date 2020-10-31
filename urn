@@ -19,7 +19,7 @@ const firstFinal int = 44
 const enFail int = 46
 const enMain int = 1
 
-// Machine is the interface representing the FSM
+// Machine is the interface representing the finite state machine
 type Machine interface {
 	Error() error
 	Parse(input []byte) (*URN, error)
@@ -33,7 +33,7 @@ type machine struct {
 	tolower        []int
 }
 
-// NewMachine creates a new FSM able to parse RFC 2141 strings.
+// NewMachine creates a new finite state machine able to parse RFC 2141 strings.
 func NewMachine() Machine {
 	m := &machine{}
 
